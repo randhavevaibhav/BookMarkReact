@@ -131,7 +131,10 @@ function App() {
       <hr />
 
       <ul>
-        {BookMarkList.map((val, key) => {
+        {BookMarkList.length!==0 ?  
+        
+        
+        BookMarkList.map((val, key) => {
           return (
             <div id="tasks" key={key + "2"}>
               <button
@@ -155,7 +158,7 @@ function App() {
               </button>
             </div>
           );
-        })}
+        })  :<p></p>}
       </ul>
 
       {localStorage.setItem("BookMarkData", JSON.stringify(BookMarkList))}

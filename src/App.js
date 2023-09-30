@@ -1,32 +1,14 @@
 import "./App.css";
-import { useState,useRef,useEffect } from "react";
+import { useState,useRef } from "react";
 
 
 function App() {
-const [BookMarkList, setBookMarkList] = useState([]);
+  const savedData = localStorage.getItem('BookMarkData');
+const [BookMarkList, setBookMarkList] = useState(JSON.parse(savedData));
 const [currentBookMark, setCurrentBookMark] = useState();
 const [CurrentURL, setURL] = useState();
 
-useEffect(
-()=>{
 
-console.log("using useeffect");
-const savedData = localStorage.getItem('BookMarkData');
-        if (savedData) {
-
-          
-          //setBookMarkList([...BookMarkList,JSON.parse(savedData)]);
-          setBookMarkList(JSON.parse(savedData));
-          console.log("Saved data present !!!");
-
-
-
-        }
-
-},[]
-
-
-)
 
 const inputBookMark = useRef(null);
 const inputURL = useRef(null);
@@ -45,8 +27,7 @@ const  addBookMark= ()=>
   inputBookMark.current.value="";
   setCurrentBookMark("");
   inputURL.current.value="";
-  console.log("BookmarkList in addbookmark() --> "+BookMarkList);
-  localStorage.setItem('BookMarkData', JSON.stringify(BookMarkList));
+
   
 
   }
@@ -58,15 +39,16 @@ const  addBookMark= ()=>
 
 const deleteBookMark = (bookMarkToDelete)=>
 {
+  
     setBookMarkList(BookMarkList.filter((bookMark)=>{
 
      return bookMark.bookMark!==bookMarkToDelete;
 
     }))
-console.log("Calling delet bookmark !!")
+
 
     localStorage.setItem('BookMarkData', JSON.stringify(BookMarkList));
-    console.log("BookMarkList in delet() ---> "+BookMarkList[0].url)
+  
     
 }
 
@@ -179,17 +161,24 @@ const redirect = (urlString) =>
            
               </div>
               
-             
+           
               
               );
-                     
            
-
+                     
+             
 
         })}
 
 
+
+
+
       </ul>
+
+      
+      {localStorage.setItem('BookMarkData', JSON.stringify(BookMarkList))}
+      
 
             
            

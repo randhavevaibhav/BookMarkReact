@@ -24,10 +24,19 @@ function App() {
     ) {
       alert("please give valid BookMark and URL !!");
     } else {
-      setBookMarkList([
-        ...BookMarkList,
-        { bookMark: currentBookMark, url: CurrentURL },
-      ]);
+
+      if(BookMarkList?.length===0)
+      {
+        setBookMarkList([{ bookMark: currentBookMark, url: CurrentURL }])
+      }
+      else{
+        setBookMarkList([
+          ...BookMarkList,
+          { bookMark: currentBookMark, url: CurrentURL },
+        ]);
+
+      }
+      
       inputBookMark.current.value = "";
       setCurrentBookMark("");
       inputURL.current.value = "";

@@ -131,7 +131,7 @@ function App() {
       <hr />
 
       <ul>
-        {BookMarkList.length!==0 ?  
+        {BookMarkList?.length ?  
         
         
         BookMarkList.map((val, key) => {
@@ -162,6 +162,8 @@ function App() {
       </ul>
 
       {localStorage.setItem("BookMarkData", JSON.stringify(BookMarkList))}
+   
+      
     </div>
   );
 }

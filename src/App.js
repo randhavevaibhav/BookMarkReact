@@ -2,9 +2,28 @@ import "./App.css";
 import { useState, useRef } from "react";
 
 function App() {
-  const savedData = localStorage.getItem("BookMarkData");
 
-  const savedDataList = JSON.parse(savedData);
+  var savedData = []
+  var savedDataList =[]
+  
+  savedData = localStorage.getItem("BookMarkData");
+  console.log("savedData length ---> "+savedData?.length)
+  
+  if(savedData===null && savedData?.length>=2)
+  {
+    savedData = [{ bookMark: "test", url: "test" }]
+    console.log("inside null")
+  }
+  else{
+     savedDataList = JSON.parse(savedData);
+
+  }
+
+  
+  console.log("savedData ---> "+savedData)
+
+  
+  
 
   const [BookMarkList, setBookMarkList] = useState(savedDataList);
 
@@ -25,15 +44,20 @@ function App() {
       alert("please give valid BookMark and URL !!");
     } else {
 
-      if(BookMarkList?.length===0)
+      console.log("BookMarkList length ---> "+BookMarkList?.length)
+
+      if(BookMarkList?.length===0 || BookMarkList?.length===undefined)
       {
         setBookMarkList([{ bookMark: currentBookMark, url: CurrentURL }])
+        console.log("Empty adding")
       }
       else{
         setBookMarkList([
           ...BookMarkList,
           { bookMark: currentBookMark, url: CurrentURL },
         ]);
+
+        console.log("adding with something")
 
       }
       

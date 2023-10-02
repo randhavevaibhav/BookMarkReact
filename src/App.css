@@ -53,6 +53,7 @@ button{
   border-radius: 8%;
   color: white;
   background-color:#4681f4;
+   font-weight: bold;
 }
 
 ul{
@@ -98,6 +99,7 @@ margin-bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+ 
 }
 .bookmark-container
 {
@@ -117,7 +119,8 @@ margin-bottom: 10px;
 .customButton-name
 
 {
-  background-color:#f4e646;
+  background-color:#cebe13;
+  font-weight: bold;
   
 
 }

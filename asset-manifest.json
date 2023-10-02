@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/BookMarkReact/static/css/main.e99bcac3.css",
-    "main.js": "/BookMarkReact/static/js/main.ffb48434.js",
+    "main.js": "/BookMarkReact/static/js/main.10da11e9.js",
     "static/js/787.3e4bc9e0.chunk.js": "/BookMarkReact/static/js/787.3e4bc9e0.chunk.js",
     "index.html": "/BookMarkReact/index.html",
     "main.e99bcac3.css.map": "/BookMarkReact/static/css/main.e99bcac3.css.map",
-    "main.ffb48434.js.map": "/BookMarkReact/static/js/main.ffb48434.js.map",
+    "main.10da11e9.js.map": "/BookMarkReact/static/js/main.10da11e9.js.map",
     "787.3e4bc9e0.chunk.js.map": "/BookMarkReact/static/js/787.3e4bc9e0.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e99bcac3.css",
-    "static/js/main.ffb48434.js"
+    "static/js/main.10da11e9.js"
   ]
 }

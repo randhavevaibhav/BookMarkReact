@@ -153,7 +153,7 @@ function App() {
                   key={key}
                 >
                   {" "}
-                  {val.bookMark} {val.url}
+                  {val.bookMark}
                 </button>
 
                 <button
